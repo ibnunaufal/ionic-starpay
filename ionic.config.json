@@ -1,0 +1,7 @@
+{
+  "name": "starpay",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
