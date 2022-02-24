@@ -1,0 +1,40 @@
+* {
+    font-size: 14px;
+}
+ion-header{
+    ion-row{
+        ion-col{
+            background: #fff;
+            color: #000;
+            text-align: center;
+            p{
+                margin: 0;
+            }
+        }
+    }
+}
+
+ion-content{
+    ion-row{
+        margin-top: 20px;
+    }
+    ion-col{
+        margin-bottom: 10px;
+        div{
+            text-align: center;
+            img{
+                width: 80px;
+            }
+            p{
+                margin: 0;
+            }
+        }
+    }
+    ion-fab{
+        margin-bottom: 80px;
+        margin-right: 10px;
+        ion-icon{
+            zoom: 2;
+        }
+    }
+}

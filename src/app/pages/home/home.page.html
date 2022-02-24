@@ -1,0 +1,39 @@
+<ion-header>
+  <!-- <ion-toolbar>
+    <ion-title>home</ion-title>
+  </ion-toolbar> -->
+  <ion-row>
+    <ion-col>
+      <p style="font-weight: 600;">Saldo</p>
+      <p>Rp 21.000</p>
+    </ion-col>
+    <ion-col>
+      <ion-icon name="share-outline"></ion-icon>
+      <p>Topup</p>
+    </ion-col>
+    <ion-col>
+      <ion-icon name="sync-outline"></ion-icon>
+      <p>Topup</p>
+    </ion-col>
+  </ion-row>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col size="4" *ngFor="let item of menus">
+      <!-- <div (click)="openPage(item)" [ngClass]=" {disable: !item.active}"> -->
+      <div (click)="openPage(item)">
+        <!-- <img src="../../../assets/home-icon/pln.png" alt=""> -->
+        <img [src]="item.icon" alt="">
+        <!-- <ion-icon class="bottom-icon" [name]="item.icon"></ion-icon> -->
+        <p>{{ item.name }}</p>
+      </div>
+    </ion-col>
+  </ion-row>
+
+  <ion-fab vertical="bottom" horizontal="end">
+    <ion-fab-button>
+      <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

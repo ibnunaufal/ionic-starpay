@@ -1,0 +1,25 @@
+<ion-header>
+  <!-- <ion-toolbar>
+    <ion-title>rekap</ion-title>
+  </ion-toolbar> -->
+  <!-- <ion-datetime displayFormat="MMMM YYYY"></ion-datetime> -->
+  <ion-row>
+    <ion-col>
+      <ion-select value="Februari" interface="action-sheet" cancelText="Batal">
+        <ion-select-option *ngFor="let item of bulan" value="{{item}}">{{item}}
+        </ion-select-option>
+      </ion-select>
+    </ion-col>
+    <ion-col>
+      <ion-select [value]="thisYear" interface="action-sheet" cancelText="Batal">
+        <ion-select-option *ngFor="let item of tahun" value="{{item}}">{{item}}
+        </ion-select-option>
+      </ion-select>
+    </ion-col>
+  </ion-row>
+  <ion-button expand="block">Filter</ion-button>
+</ion-header>
+
+<ion-content>
+
+</ion-content>
