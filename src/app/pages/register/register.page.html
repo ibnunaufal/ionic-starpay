@@ -1,0 +1,39 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>register</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <ion-row>
+        <ion-col>
+          <img src="../../../assets/logo-home.png" alt="">
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-input type="email" placeholder="Masukkan Email atau No HP Anda" name="email" [(ngModel)]="email"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button (click)="register()" expand="block" shape="round">
+            Register
+          </ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <p>Mohon masukkan Email atau No HP anda, kami akan mengirim kode verifikasi melalui Email</p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <p>Dengan mendaftar STAR PAY anda telah menyetujui syarat dan ketentuan dan sudah membaca kebijakan privasi kami</p>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,9 +1,31 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar>
     <ion-title>account</ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
 <ion-content>
+  <ion-list>
+    <ion-item lines="none" (click)="autoLogin()">
+      <ion-icon slot="start" name="finger-print-outline"></ion-icon>Setting Printer
+    </ion-item>
+    <ion-item lines="none" (click)="presentChangePassword()">
+      <ion-icon slot="start" name="key-outline"></ion-icon>Ganti Password
+    </ion-item>
+    <ion-item lines="none" (click)="changeLanguage()">
+      <ion-icon slot="start" name="globe-outline"></ion-icon>Keluar
+    </ion-item>
+    <ion-item lines="none" (click)="changeInst()" *ngIf="showChangeInst">
+      <ion-icon slot="start" name="business-outline"></ion-icon>as
+    </ion-item>
 
+  </ion-list>
+  <ion-label>
+
+  </ion-label>
+  <ion-row>
+    <ion-col>
+
+    </ion-col>
+  </ion-row>
 </ion-content>
