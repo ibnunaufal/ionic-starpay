@@ -156,7 +156,8 @@ export class HttpService {
     // var headers = new HttpHeaders()
     // headers.append('Content-Type', 'application/x-www-form-urlencoded');
     let headers = new HttpHeaders({
-      'Content-Type': 'application/x-www-form-urlencoded'
+      'Content-Type': 'application/x-www-form-urlencoded',
+      // 'VERSI_STARPAY': '',
     });
     // let options = new ({ headers: headers });
     return new Promise((resolve, reject) => {
