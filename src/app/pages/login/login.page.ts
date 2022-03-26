@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Storage } from '@ionic/storage-angular';
 import { AlertService } from 'src/app/services/alert.service';
+import { AuthService } from 'src/app/services/auth.service';
 import { HttpService } from 'src/app/services/http.service';
 import { LoadingService } from 'src/app/services/loading.service';
 
@@ -18,7 +19,8 @@ export class LoginPage implements OnInit {
     private loading: LoadingService,
     private alert: AlertService,
     private http: HttpService,
-    private router: Router
+    private router: Router,
+    private auth: AuthService
   ) { }
 
   ngOnInit() {
@@ -28,10 +30,16 @@ export class LoginPage implements OnInit {
 
   login(){
     console.log("asdad")
-    this.storage.get('appId').then((res) => {
-      this.http.test().then((res)).catch((err) => {
-        console.log(err)
+    this.storage.get('profile').then((res:any) => {
+      this.auth.login("ibnunaufal5758@gmail.com", this.pin).then((res) => {
+        this.storage.set("profile", res)
+        this.router.navigateByUrl('/');
       })
+      // let data = {"tipe":"LOGIN","username":"NAUFAL5100","password":"NX2JMX","token":"","appid":"","website":"transaksi"}
+      // this.http.post(this.login)
+      // this.http.test().then((res)).catch((err) => {
+      //   console.log(err)
+      // })
       // if(res){
       //   // {"tipe":"LOGIN",
       //   // "username":"NAUFAL5100",

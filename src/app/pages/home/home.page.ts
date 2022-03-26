@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
+import { Storage } from '@ionic/storage-angular';
+import { HomeDetailPage } from './home-detail/home-detail.page';
 
 @Component({
   selector: 'app-home',
@@ -72,9 +75,28 @@ export class HomePage implements OnInit {
       class: "menu3"
     }
   ]
-  constructor() { }
+  balance;
+  constructor(
+    private storage: Storage,
+    private modalController: ModalController
+  ) { 
+    this.storage.get('profile').then((res:any) => {
+      this.balance = res.saldo
+    })
+  }
 
   ngOnInit() {
+  }
+
+
+  async openPage(item) {
+    const modal = await this.modalController.create({
+    component: HomeDetailPage,
+    componentProps: { item: item }
+    });
+  
+    await modal.present();
+  
   }
 
 }

@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: HomePage
+  },
+  {
+    path: 'home-detail',
+    loadChildren: () => import('./home-detail/home-detail.module').then( m => m.HomeDetailPageModule)
   }
 ];
 

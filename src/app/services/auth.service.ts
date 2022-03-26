@@ -12,11 +12,12 @@ export class AuthService {
 
 
   login(username: String, password: String) {
-    let data = {
-      username: username,
-      password: password
-    };
+    // let data = {
+    //   username: username,
+    //   password: password
+    // };
+    let data = {"tipe":"LOGIN","username":username,"password":password,"token":"","appid":"","website":"transaksi"}
 
-    return this.http.login(data);
+    return this.http.post("/framework/core/public/index.php/LOGIN/LOGIN/MOBILE",data);
   }
 }

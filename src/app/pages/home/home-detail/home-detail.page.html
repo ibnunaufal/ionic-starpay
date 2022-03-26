@@ -1,0 +1,260 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ selectedArr.name }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="firstWord == 'pln'">
+    <ion-card>
+      <ion-card-content>
+        <ion-row>
+          <ion-col>
+            <ion-button expand="block">Daftar Favorit</ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-item>
+          <ion-label>Jenis</ion-label>
+          <ion-select cancelText="Batal" okText="Simpan">
+            <ion-select-option value="postpaid">Postpaid</ion-select-option>
+            <ion-select-option value="prepaid">Prepaid</ion-select-option>
+            <ion-select-option value="non">Non Taglist</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">ID Pelanggan</ion-label>
+          <ion-input name="idTrx" [(ngModel)]="idTrx" type="number"></ion-input>
+        </ion-item>
+        
+        <ion-row>
+          <ion-col>
+            <ion-button expand="block" (click)="process()">Proses</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <div *ngIf="firstWord == 'telkom'">
+    <ion-card>
+      <ion-card-content>
+        <ion-row>
+          <ion-col>
+            <ion-button expand="block">Daftar Favorit</ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-item>
+          <ion-label>Jenis</ion-label>
+          <ion-select cancelText="Batal" okText="Simpan">
+            <ion-select-option value="telepon">Telepon</ion-select-option>
+            <ion-select-option value="speedy">Speedy</ion-select-option>
+            <ion-select-option value="telkomvision">Telkom Vision</ion-select-option>
+            <ion-select-option value="halo">Kartu Halo</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Nomor Pelanggan</ion-label>
+          <ion-input name="idTrx" [(ngModel)]="idTrx" type="tel"></ion-input>
+        </ion-item>
+        
+        <ion-row>
+          <ion-col>
+            <ion-button expand="block" (click)="process()">Proses</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <div *ngIf="firstWord == 'pdam'">
+    <ion-card>
+      <ion-card-content>
+        <ion-row>
+          <ion-col>
+            <ion-button expand="block">Daftar Favorit</ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-item>
+          <ion-label>Wilayah</ion-label>
+          <ion-select cancelText="Batal" okText="Simpan">
+            <ion-select-option value="salatiga">PDAM Kota Salatiga</ion-select-option>
+            <ion-select-option value="kabsemarang">PDAM Kabupaten Semarang</ion-select-option>
+            <ion-select-option value="semarang">PDAM Kota Semarang</ion-select-option>
+            <ion-select-option value="byl">PDAM Kabupaten Boyolali</ion-select-option>
+            <ion-select-option value="surakarta">PDAM Kota Surakarta</ion-select-option>
+            <ion-select-option value="byl">PDAM Kabupaten Klaten</ion-select-option>
+            <ion-select-option value="byl">PDAM Kabupaten Sleman</ion-select-option>
+            <ion-select-option value="byl">PDAM Kabupaten Sragen</ion-select-option>
+            <ion-select-option value="byl">PDAM Kabupaten Karanganyar</ion-select-option>
+            <ion-select-option value="byl">PDAM Kota Palembang</ion-select-option>
+
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Nomor Sambungan</ion-label>
+          <ion-input name="idTrx" [(ngModel)]="idTrx" type="tel"></ion-input>
+        </ion-item>
+        
+        <ion-row>
+          <ion-col>
+            <ion-button expand="block" (click)="process()">Proses</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <div *ngIf="firstWord == 'bpjs'">
+    <ion-card>
+      <ion-card-content>
+        <ion-row>
+          <ion-col>
+            <ion-button expand="block">Daftar Favorit</ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-item>
+          <ion-label>Jenis</ion-label>
+          <ion-select cancelText="Batal" okText="Simpan">
+            <ion-select-option value="kesehatan">Kesehatan</ion-select-option>
+            <ion-select-option value="ketenagakerjaan">Ketenagakerjaan</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Nomor Peserta</ion-label>
+          <ion-input name="idTrx" [(ngModel)]="idTrx" type="tel"></ion-input>
+        </ion-item>
+        
+        <ion-row>
+          <ion-col>
+            <ion-button expand="block" (click)="process()">Proses</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <div *ngIf="firstWord == 'pulsa'">
+    <ion-card>
+      <ion-card-content>
+        <ion-row>
+          <ion-col>
+            <ion-button expand="block">Daftar Favorit</ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-item>
+          <ion-label position="floating">Nomor Pelanggan</ion-label>
+          <ion-input name="idTrx" [(ngModel)]="idTrx" type="tel"></ion-input>
+        </ion-item>
+        
+        <ion-row>
+          <ion-col>
+            <ion-button expand="block" (click)="process()">Proses</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <div *ngIf="firstWord == 'multifinance'">
+    <ion-card>
+      <ion-card-content>
+        <ion-row>
+          <ion-col>
+            <ion-button expand="block">Daftar Favorit</ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-item>
+          <ion-label>Jenis</ion-label>
+          <ion-select cancelText="Batal" okText="Simpan">
+            <ion-select-option value="baf">BAF</ion-select-option>
+            <ion-select-option value="fif">FIF</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Nomor Kontrak</ion-label>
+          <ion-input name="idTrx" [(ngModel)]="idTrx" type="tel"></ion-input>
+        </ion-item>
+        
+        <ion-row>
+          <ion-col>
+            <ion-button expand="block" (click)="process()">Proses</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <div *ngIf="firstWord == 'tv'">
+    <ion-card>
+      <ion-card-content>
+        <ion-row>
+          <ion-col>
+            <ion-button expand="block">Daftar Favorit</ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-item>
+          <ion-label>Jenis</ion-label>
+          <ion-select cancelText="Batal" okText="Simpan">
+            <ion-select-option value="indovision">Indovision</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Nomor Pelanggan</ion-label>
+          <ion-input name="idTrx" [(ngModel)]="idTrx" type="tel"></ion-input>
+        </ion-item>
+        
+        <ion-row>
+          <ion-col>
+            <ion-button expand="block" (click)="process()">Proses</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <div *ngIf="firstWord == 'topup'">
+    <ion-card>
+      <ion-card-content>
+        <ion-row>
+          <ion-col>
+            <ion-button expand="block">Daftar Favorit</ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-item>
+          <ion-label>Jenis Topup</ion-label>
+          <ion-select cancelText="Batal" okText="Simpan">
+            <ion-select-option value="ovo">OVO</ion-select-option>
+            <ion-select-option value="gopay">Gopay</ion-select-option>
+            <ion-select-option value="dana">Dana</ion-select-option>
+            <ion-select-option value="shopee">Shopee</ion-select-option>
+            <ion-select-option value="linkaja">LinkAja</ion-select-option>
+            <ion-select-option value="etoll">E-Toll Mandiri</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Nomor Pelanggan</ion-label>
+          <ion-input name="idTrx" [(ngModel)]="idTrx" type="tel"></ion-input>
+        </ion-item>
+        
+        <ion-row>
+          <ion-col>
+            <ion-button expand="block" (click)="process()">Proses</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <div *ngIf="firstWord == 'hp'">
+    <ion-card>
+      <ion-card-content>
+        <ion-row>
+          <ion-col>
+            <ion-button expand="block">Daftar Favorit</ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-item>
+          <ion-label position="floating">Nomor Pelanggan</ion-label>
+          <ion-input name="idTrx" [(ngModel)]="idTrx" type="tel"></ion-input>
+        </ion-item>
+        <ion-row>
+          <ion-col>
+            <ion-button expand="block" (click)="process()">Proses</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
