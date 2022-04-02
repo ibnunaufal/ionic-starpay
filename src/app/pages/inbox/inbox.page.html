@@ -5,8 +5,24 @@
 </ion-header> -->
 
 <ion-content>
-  <ion-list *ngFor="let x of [0,1,2]">
-    <p>2022-02-02</p>
-    <p>Top up berhasil, DUMMY DUMMY</p>
-  </ion-list>
+  <div *ngIf="!isLoading && !isNull">
+    <ion-list *ngFor="let i of inbox">
+      <p> {{ i.waktu }} </p>
+      <p> {{ subString(i.msg) }} </p>
+    </ion-list>
+  </div>
+
+  <div class="divNull" *ngIf="!isLoading && isNull">
+    <ion-icon name="alert-circle-outline"></ion-icon>
+    <p>Data tidak ditemukan</p>
+  </div>
+
+  <div  *ngIf="isLoading && !isNull">
+    <ion-list *ngFor="let x of [0,1,2]">
+      <p> <ion-skeleton-text animated></ion-skeleton-text> </p>
+      <p> <ion-skeleton-text animated></ion-skeleton-text> </p>
+    </ion-list>
+  </div>
+
+
 </ion-content>

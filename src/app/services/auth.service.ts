@@ -20,4 +20,14 @@ export class AuthService {
 
     return this.http.post("/framework/core/public/index.php/LOGIN/LOGIN/MOBILE",data);
   }
+
+  post(url, data){
+    return this.http.post(url, data);
+    // return this.http.post("/framework/core/public/index.php/LOGIN/LOGIN/MOBILE",data);
+  }
+
+  get(url){
+    return this.get(url);
+  }
+
 }

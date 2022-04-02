@@ -18,39 +18,39 @@ export class HttpService {
     private storage: Storage
     ) { }
 
-  get(url) {
-    return new Promise((resolve, reject) => {
-      this.header.getHeaders().then((headers) => {
-        const httpOptions = {
-          headers: headers,
-          observe: 'response' as 'response'
-        };
-        this.http
-          .get(environment.API_URL + url, headers)
-          .pipe(
-            timeout(environment.TIMEOUT),
-            catchError(this.error.handleError)
-          )
-          .subscribe((response: any) => {
-            this.storage
-              .set(
-                "token",
-                response.headers.get("Authorization").replace("Bearer ", "")
-              )
-              .then(() => {
-                // this.token = data.headers
-                //   .get("Authorization")
-                //   .replace("Bearer ", "");
+  // get(url) {
+  //   return new Promise((resolve, reject) => {
+  //     this.header.getHeaders().then((headers) => {
+  //       const httpOptions = {
+  //         headers: headers,
+  //         observe: 'response' as 'response'
+  //       };
+  //       this.http
+  //         .get(environment.API_URL + url, headers)
+  //         .pipe(
+  //           timeout(environment.TIMEOUT),
+  //           catchError(this.error.handleError)
+  //         )
+  //         .subscribe((response: any) => {
+  //           this.storage
+  //             .set(
+  //               "token",
+  //               response.headers.get("Authorization").replace("Bearer ", "")
+  //             )
+  //             .then(() => {
+  //               // this.token = data.headers
+  //               //   .get("Authorization")
+  //               //   .replace("Bearer ", "");
 
-                // this.authState.next(true);
+  //               // this.authState.next(true);
 
-                resolve(response);
-              });
-          }, reject);
-      });
-    });
+  //               resolve(response);
+  //             });
+  //         }, reject);
+  //     });
+  //   });
     
-  }
+  // }
 
 
   postFailed(url, data) {
@@ -187,6 +187,22 @@ export class HttpService {
       //     resolve(data);
       //   }, reject);
     // });
+  }
+
+  get(url){
+
+    return new Promise((resolve, rejects) => {
+      let headers = new HttpHeaders({
+        'Content-Type': 'application/x-www-form-urlencoded',
+        // 'VERSI_STARPAY': '',
+      });
+      // this.http.get( environment.API_URL + url, {headers: headers})
+      this.http.get(environment.API_URL + url)
+      .pipe(timeout(environment.TIMEOUT), catchError(this.error.handleError))
+      .subscribe((data) => {
+        resolve(data);
+      }, rejects);
+    })
   }
 
 }

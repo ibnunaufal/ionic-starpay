@@ -92,7 +92,8 @@ export class HomePage implements OnInit {
   async openPage(item) {
     const modal = await this.modalController.create({
     component: HomeDetailPage,
-    componentProps: { item: item }
+    componentProps: { item: item },
+    cssClass: "home-menu"
     });
   
     await modal.present();

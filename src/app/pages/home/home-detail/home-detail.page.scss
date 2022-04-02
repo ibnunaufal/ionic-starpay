@@ -1,0 +1,16 @@
+
+ion-header{
+    border-top-left-radius: 25px !important; 
+    border-top-right-radius: 25px !important;
+    ion-toolbar{
+      border-top-left-radius: 25px !important; 
+      border-top-right-radius: 25px !important;      
+    }
+    ion-title{
+        text-align: center;
+    }
+    .btn{
+      margin: 0px 10px 0px;
+      padding: 1px 30px 1px 30px;
+    }
+  }
