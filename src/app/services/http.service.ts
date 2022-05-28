@@ -189,6 +189,20 @@ export class HttpService {
     // });
   }
 
+  postInqPay(url, body){
+    return new Promise((resolve, rejects) => {
+      let headers = new HttpHeaders({
+        'Content-Type': 'application/json',
+        // 'VERSI_STARPAY': '',
+      });
+      this.http.post( environment.API_URL + url, body, {headers: headers})
+      .pipe(timeout(environment.TIMEOUT), catchError(this.error.handleError))
+      .subscribe((data) => {
+        resolve(data);
+      }, rejects);
+    })
+  }
+
   get(url){
 
     return new Promise((resolve, rejects) => {

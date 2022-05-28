@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavParams } from '@ionic/angular';
+import { Storage } from '@ionic/storage-angular';
 
 @Component({
   selector: 'app-home-detail',
@@ -15,7 +16,8 @@ export class HomeDetailPage implements OnInit {
   idTrx
 
   constructor(
-    private navParams: NavParams
+    private navParams: NavParams,
+    private storage: Storage
   ) { 
 
     this.selectedArr = this.navParams.get('item');
@@ -105,5 +107,31 @@ export class HomeDetailPage implements OnInit {
     }
   }
 
+  inq(){
+    var data = {
+      // detail: {
+      //   nominal: $scope.trx.amount,
+      //   admin_bank: $scope.trx.admin
+      // },
+      // noid: localStorage.noid,
+      // username: localStorage.nohp,
+      // token: localStorage.token,
+      // appid: localStorage.appid
+    };
+
+    // RequestService.inq(data, $scope.trx.product, $scope.trx.type, $scope.trx.idpel, $scope.trx.traceid).then(function(response) {
+    //   if (response.response_code == '0000') {
+    //     $scope.trx.reff = response.reff;
+    //     $scope.trx.name = response.idpel_name;
+    //     $scope.trx.content = response.content;
+
+    //     $scope.inqResult = response.response_html;
+
+    //     $scope.inq = true;
+    //   } else {
+    //     $scope.showAlert(response.response_message);
+    //   };
+    // });
+  }
 
 }

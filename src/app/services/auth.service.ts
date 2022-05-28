@@ -30,4 +30,12 @@ export class AuthService {
     return this.get(url);
   }
 
+  pay(){
+
+  }
+
+  inq(url, data){
+    return this.http.post(url, data);
+  }
+
 }
